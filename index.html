@@ -149,9 +149,10 @@
       <div class="exp-role">Robotics Researcher · March 2025 – present · Mentors: Prof. Jeannette Bohg, Dr. Cherie Ho</div>
       <p>
         Developing a persistent, object-centric memory system linking RGB-D perception with adaptive task
-        planning for mobile manipulators. Built a real-time scene graph that synchronizes perception,
-        action, and memory. Previously worked on building a grasp evaluation pipeline for dexterous multi-finger grasping 
-        using enocded 3D Gaussian Splats as object representation, achieving a 95% grasp success rate across diverse objects.
+        planning for mobile manipulators. Built a real-time scene-graph that synchronizes perception,
+        action, and memory, updating as the robot explores and interacts with its environment. Leveraged VLMs grounded with physical awareness to predict object affordances and choose appropriate motion primitives for interaction. Testing in Mujoco/IsaacSim and real-world experiments with TidyBot. 
+
+        Previously worked on building a grasp evaluation pipeline for dexterous multi-finger grasping using 3D Gaussian Splatting (3DGS) for compact, information-rich object representations. Designed a VQ-VAE to compress continuous 3DGS into discrete latent embeddings, combined with grasp parameters to train a multi-headed evaluator predicting grasp success, collision risk, and stability. Achieved a 95.1% simulated grasp success rate, outperforming BPS and NeRF baselines.
       </p>
     </div>
 

@@ -1,269 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Anuva Banwasi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      max-width: 900px;
-      margin: 40px auto 80px;
-      line-height: 1.6;
-      color: #333;
-      padding: 0 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-weight: 500;
-    }
+<title>Anuva Banwasi</title>
+<meta name="description" content="Anuva Banwasi is a researcher in robotics and embodied AI, working on long-horizon memory, 3D perception, and interaction-driven scene understanding for mobile manipulators at Stanford University.">
 
-    .top-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: flex-start;
-    }
+<meta property="og:title" content="Anuva Banwasi">
+<meta property="og:description" content="Researcher in robotics and embodied AI, working on long-horizon memory, 3D perception, and interaction-driven scene understanding for mobile manipulators.">
+<meta property="og:url" content="https://anuvabanwasi.github.io/">
+<meta property="og:image" content="https://anuvabanwasi.github.io/profile.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 
-    .profile-pic {
-      width: 180px;
-      height: auto;
-      border-radius: 6px;
-      object-fit: cover;
-      display: block;
-    }
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 
-    .bio {
-      flex: 1;
-      min-width: 250px;
-    }
+<style>
+  :root {
+    --bg:        #ffffff;
+    --surface:   #f7f8fa;
+    --text:      #1a1d21;
+    --text-soft: #4a5057;
+    --text-mute: #767d86;
+    --line:      #e3e6ea;
+    --accent:    #1b4ca1;
+    --accent-bg: #eaf0fb;
+    --radius:    10px;
+  }
 
-    .bio p:first-of-type {
-      margin-top: 0;
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #101215;
+      --surface:   #181b20;
+      --text:      #e9ecef;
+      --text-soft: #b3b9c1;
+      --text-mute: #858c95;
+      --line:      #2a2f36;
+      --accent:    #86b6ef;
+      --accent-bg: #16233a;
     }
+  }
+  :root[data-theme="dark"] {
+    --bg:#101215; --surface:#181b20; --text:#e9ecef; --text-soft:#b3b9c1;
+    --text-mute:#858c95; --line:#2a2f36; --accent:#86b6ef; --accent-bg:#16233a;
+  }
 
-    a {
-      color: #1a0dab;
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
+  * { box-sizing: border-box; }
 
-    .section {
-      margin-top: 60px;
-    }
+  html { -webkit-text-size-adjust: 100%; }
 
-    /* Publications */
-    .publication {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    .publication img {
-      width: 180px;
-      height: auto;
-      border-radius: 6px;
-      object-fit: cover;
-    }
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 16px 72px;
+  }
 
-    .pub-entry {
-      flex: 1;
-    }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 2px; }
 
-    .pub-title {
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
+  /* ---------- header ---------- */
+  header.intro {
+    display: grid;
+    grid-template-columns: 172px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
 
-    .pub-authors {
-      font-style: italic;
-      margin-bottom: 4px;
-    }
+  .portrait {
+    width: 172px;
+    height: 172px;
+    border-radius: var(--radius);
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--line);
+  }
 
-    .pub-links a {
-      margin-right: 10px;
-    }
+  h1 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 2.55rem;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: -6px 0 6px;
+  }
 
-    /* Research Experience list */
-    .exp-entry {
-      margin-bottom: 30px;
-    }
+  .tagline {
+    color: var(--text-mute);
+    font-size: 0.98rem;
+    margin: 0 0 18px;
+  }
 
-    .exp-title {
-      font-weight: 500;
-    }
+  .intro p { margin: 0 0 14px; color: var(--text-soft); }
 
-    .exp-role {
-      font-style: italic;
-      margin-bottom: 6px;
-    }
-  </style>
+  .contact {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .contact a {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-soft);
+    background: var(--surface);
+    transition: border-color .15s, color .15s;
+  }
+  .contact a:hover {
+    text-decoration: none;
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ---------- sticky section nav ---------- */
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  .sitenav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sitenav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  .sitenav-links { display: flex; flex-wrap: wrap; gap: 20px; }
+
+  .sitenav-links a {
+    font-size: 0.89rem;
+    font-weight: 500;
+    color: var(--text-mute);
+    padding: 2px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .sitenav-links a:hover { color: var(--text); text-decoration: none; }
+  .sitenav-links a.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ---------- sections ---------- */
+  section { margin-top: 44px; scroll-margin-top: 62px; }
+
+  h2 {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-mute);
+    margin: 0 0 18px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ---------- news ---------- */
+  .news { list-style: none; margin: 0; padding: 0; }
+  .news li {
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    gap: 16px;
+    padding: 5px 0;
+    color: var(--text-soft);
+  }
+  .news time {
+    color: var(--text-mute);
+    font-size: 0.86rem;
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+  }
+
+  /* ---------- publications ---------- */
+  .pub {
+    display: grid;
+    grid-template-columns: 216px 1fr;
+    gap: 26px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .pub:last-child { border-bottom: 0; }
+
+  .pub-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    display: block;
+  }
+
+  .pub-title {
+    font-weight: 600;
+    font-size: 1.06rem;
+    line-height: 1.35;
+    margin: -3px 0 5px;
+  }
+  .pub-title a { color: var(--text); }
+  .pub-title a:hover { color: var(--accent); }
+
+  .pub-authors { font-size: 0.94rem; color: var(--text-soft); margin-bottom: 4px; }
+  .pub-authors .me { color: var(--text); font-weight: 600; }
+
+  .pub-venue { font-size: 0.92rem; color: var(--text-mute); margin-bottom: 12px; }
+  .pub-venue em { font-style: italic; }
+
+  .badge {
+    display: inline-block;
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-left: 8px;
+    vertical-align: 1.5px;
+  }
+
+  .pub-links { display: flex; flex-wrap: wrap; gap: 7px; }
+  .pub-links a {
+    font-size: 0.84rem;
+    font-weight: 500;
+    padding: 3px 11px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+  }
+  .pub-links a:hover { text-decoration: none; border-color: var(--accent); }
+  .pub-links .soon-tag {
+    font-size: 0.84rem;
+    font-weight: 500;
+    padding: 3px 11px;
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    color: var(--text-mute);
+  }
+
+  /* ---------- experience ---------- */
+  .exp { padding: 0 0 26px; }
+  .exp:last-child { padding-bottom: 0; }
+
+  .exp-title { font-weight: 600; font-size: 1.02rem; margin-bottom: 2px; }
+  .exp-meta {
+    font-size: 0.89rem;
+    color: var(--text-mute);
+    margin-bottom: 10px;
+  }
+  .exp p { margin: 0 0 12px; color: var(--text-soft); font-size: 0.97rem; }
+  .exp p:last-child { margin-bottom: 0; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--text-mute);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 720px) {
+    .wrap { padding: 24px 16px 56px; }
+    .sitenav-inner { padding: 9px 16px; }
+    .sitenav-links { gap: 16px; width: 100%; justify-content: space-between; }
+    .sitenav-links a { font-size: 0.84rem; }
+    header.intro { grid-template-columns: 1fr; gap: 24px; }
+    .portrait { width: 132px; height: 132px; }
+    h1 { font-size: 2.1rem; margin-top: 0; }
+    .pub { grid-template-columns: 1fr; gap: 16px; }
+    .pub-thumb { max-width: 340px; }
+    .news li { grid-template-columns: 1fr; gap: 2px; }
+    section { margin-top: 36px; }
+  }
+</style>
 </head>
 
-<body>
+<body id="top">
 
-  <h1>Anuva Banwasi</h1>
+<nav class="sitenav" aria-label="Section navigation">
+  <div class="sitenav-inner">
+    <div class="sitenav-links">
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="AnuvaBanwasi_Resume_Updated.pdf">CV</a>
+    </div>
+  </div>
+</nav>
 
-  <!-- ================= TOP SECTION ================ -->
-  <div class="top-section">
-    <img class="profile-pic" src="profile.jpg" alt="Profile Photo">
+<div class="wrap">
 
-    <div class="bio">
+  <!-- ============================ INTRO ============================ -->
+  <header class="intro">
+    <img class="portrait" src="profile.jpg" alt="Anuva Banwasi">
+
+    <div>
+      <h1>Anuva Banwasi</h1>
+      <p class="tagline">Stanford University</p>
+
       <p>
         I am a researcher in robotics and embodied AI, working on long-horizon memory,
-        3D perception, and interaction-driven scene understanding for mobile manipulators.
-        I currently work in the 
-        <a href="https://iprl.stanford.edu/" target="_blank">
-          Interactive Perception & Robot Learning Lab
-        </a>
-        at Stanford University, mentored by Professor Jeannette Bohg and Dr. Cherie Ho.
+        3D perception, and interaction-driven scene understanding for mobile manipulators:
+        robots that improve with experience in a home rather than starting each task
+        from scratch. I currently work in the
+        <a href="https://iprl.stanford.edu/" target="_blank" rel="noopener">Interactive Perception &amp; Robot Learning Lab</a>
+        at Stanford, mentored by Professor Jeannette Bohg and Dr. Cherie Ho.
       </p>
 
       <p>
-        Previously, I graduated cum laude from Columbia University with a B.S. in Computer Science, 
-        where I worked on zero-shot task understanding and evaluation for long-horizon tasks
+        I graduated cum laude from Columbia University with a B.S. in Computer Science,
+        where I worked on zero-shot evaluation of a robot's progress through long-horizon tasks
         under the guidance of Professor Shuran Song.
       </p>
 
-      <p>Email: <a href="mailto:anuva.banwasi@gmail.com">anuva.banwasi@gmail.com</a></p>
-
-      <p>
-        <a href="AnuvaBanwasi_Resume_Updated.pdf">[CV]</a>
-        <a href="https://scholar.google.com/citations?user=RW7glMsAAAAJ&hl=en">[Google Scholar]</a>
-        <a href="https://github.com/anuvabanwasi">[GitHub]</a>
-      </p>
+      <div class="contact">
+        <a href="mailto:anuva.banwasi@gmail.com">Email</a>
+        <a href="AnuvaBanwasi_Resume_Updated.pdf">CV</a>
+        <a href="https://scholar.google.com/citations?user=RW7glMsAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://github.com/anuvabanwasi" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
-  </div>
+  </header>
 
+  <!-- ============================ NEWS ============================ -->
+  <section id="news">
+    <h2>News</h2>
+    <ul class="news">
+      <li>
+        <time>2026</time>
+        <span>Two papers accepted to <strong>CoRL 2026</strong>:
+          <a href="https://messymem.github.io/" target="_blank" rel="noopener">MessyMem</a> and
+          <a href="https://messynav.github.io/" target="_blank" rel="noopener">MessyNav</a>.</span>
+      </li>
+      <li>
+        <time>2026</time>
+        <span>MessyMem is on arXiv:
+          <a href="https://arxiv.org/abs/2609.15976" target="_blank" rel="noopener">arXiv:2609.15976</a>.</span>
+      </li>
+    </ul>
+  </section>
 
-  <!-- ================= RESEARCH EXPERIENCE ================ -->
-  <div class="section">
+  <!-- ========================= PUBLICATIONS ========================= -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <!-- MessyMem -->
+    <article class="pub">
+      <a href="https://messymem.github.io/" target="_blank" rel="noopener">
+        <img class="pub-thumb" src="messymem.jpg"
+             alt="A mobile manipulator in a kitchen, captioned &quot;Robots need memory.&quot;">
+      </a>
+      <div>
+        <div class="pub-title">
+          <a href="https://messymem.github.io/" target="_blank" rel="noopener">MessyMem: Learning-from-Doing Memory for Mobile Manipulation</a>
+        </div>
+        <div class="pub-authors">
+          <span class="me">Anuva Banwasi</span>, William Muckelroy III, Priya Sundaresan,
+          Linfeng Zhao, Jeannette Bohg, Cherie Ho
+        </div>
+        <div class="pub-venue">
+          <em>Conference on Robot Learning (CoRL)</em>, 2026 <span class="badge">CoRL 2026</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2609.15976" target="_blank" rel="noopener">arXiv</a>
+          <a href="https://messymem.github.io/" target="_blank" rel="noopener">project page</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- MessyNav -->
+    <article class="pub">
+      <a href="https://messynav.github.io/" target="_blank" rel="noopener">
+        <img class="pub-thumb" src="messynav.jpg"
+             alt="A mobile manipulator clearing objects to navigate through a cluttered room">
+      </a>
+      <div>
+        <div class="pub-title">
+          <a href="https://messynav.github.io/" target="_blank" rel="noopener">MessyNav: Zero-Shot Navigation via Manipulation in Messy Environments</a>
+        </div>
+        <div class="pub-authors">
+          Kenneth Llontop, Cherie Ho, Dylan Zhou, <span class="me">Anuva Banwasi</span>,
+          Priya Sundaresan, Carlota Parés-Morlans, Jeannette Bohg
+        </div>
+        <div class="pub-venue">
+          <em>Conference on Robot Learning (CoRL)</em>, 2026 <span class="badge">CoRL 2026</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://messynav.github.io/" target="_blank" rel="noopener">project page</a>
+          <span class="soon-tag">paper &amp; code soon</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Hands Off, Splat On -->
+    <article class="pub">
+      <img class="pub-thumb" src="pub4.jpg" alt="Dexterous grasp evaluation with 3D Gaussian encodings">
+      <div>
+        <div class="pub-title">Hands Off, Splat On: Dexterous Grasp Evaluator with 3D Gaussian Encodings</div>
+        <div class="pub-authors">
+          <span class="me">Anuva Banwasi</span>, Yi Du, Ashwin Mahendran
+        </div>
+        <div class="pub-venue">In submission.</div>
+        <div class="pub-links">
+          <a href="https://github.com/Dude346/CS231A" target="_blank" rel="noopener">code</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Guardrails -->
+    <article class="pub">
+      <img class="pub-thumb" src="pub3.jpg" alt="Comparative analysis of guardrail frameworks for LLMs">
+      <div>
+        <div class="pub-title">A Comparative Analysis of Guardrail Frameworks for LLMs</div>
+        <div class="pub-authors">
+          <span class="me">Anuva Banwasi</span>, Samuel Friedman, Michael Khanzadeh
+        </div>
+        <div class="pub-venue">In submission.</div>
+        <div class="pub-links">
+          <a href="https://github.com/llmguardrails/LLMGuardrailsPaper" target="_blank" rel="noopener">manuscript</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ITISE -->
+    <article class="pub">
+      <img class="pub-thumb" src="pub2.jpg" alt="Electric vehicle growth, infrastructure and policy forecasting">
+      <div>
+        <div class="pub-title">Promoting Electric Vehicle Growth through Infrastructure and Policy</div>
+        <div class="pub-authors">
+          <span class="me">Anuva Banwasi</span>, Adele M. Sinai, Brennan Xavier McManus
+        </div>
+        <div class="pub-venue">
+          <em>International Conference on Time Series and Forecasting (ITISE)</em>, 2024.
+        </div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.3390/engproc2024068060" target="_blank" rel="noopener">paper</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ICRCV -->
+    <article class="pub">
+      <img class="pub-thumb" src="pub1.jpg" alt="Self evaluation using zero-shot learning">
+      <div>
+        <div class="pub-title">Self Evaluation Using Zero-shot Learning</div>
+        <div class="pub-authors">
+          <span class="me">Anuva Banwasi</span>, Xinghua Sun, Rohith Ravindranath, March Vazquez
+        </div>
+        <div class="pub-venue">
+          <em>International Conference on Robotics and Computer Vision (ICRCV)</em>, Nanjing, 2023.
+        </div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1109/ICRCV59470.2023.10329149" target="_blank" rel="noopener">paper</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ====================== RESEARCH EXPERIENCE ====================== -->
+  <section id="experience">
     <h2>Research Experience</h2>
 
-    <!-- 1. Stanford IPRL -->
-    <div class="exp-entry">
-      <div class="exp-title">Stanford University — Interactive Perception & Robot Learning Lab</div>
-      <div class="exp-role">Robotics Researcher · March 2025 – present · Mentors: Prof. Jeannette Bohg, Dr. Cherie Ho</div>
+    <div class="exp">
+      <div class="exp-title">Stanford University — Interactive Perception &amp; Robot Learning Lab</div>
+      <div class="exp-meta">Robotics Researcher · March 2025 – present · Mentors: Prof. Jeannette Bohg, Dr. Cherie Ho</div>
       <p>
-        Developing a persistent, object-centric memory system linking RGB-D perception with adaptive task planning for mobile manipulators. Built a real-time scene-graph that synchronizes perception, action, and memory, updating as the robot explores and interacts with its environment. Leveraged VLMs grounded with physical awareness to predict object affordances and choose appropriate motion primitives for interaction. Testing in Mujoco/IsaacSim and real-world experiments with TidyBot.
-        <br><br>
-        Previously built a dexterous grasp evaluation pipeline using 3D Gaussian Splatting. Designed custom VQ-VAE architecture to compress 3DGS into latent codes and trained a multi-headed evaluator predicting grasp success, collisions, and stability, achieving 95.1% grasp success rate in simulation, surpassing BPS/NeRF baselines.
+        Developing a persistent, object-centric memory system linking RGB-D perception with adaptive
+        task planning for mobile manipulators. Built a real-time scene graph that synchronizes
+        perception, action, and memory, updating as the robot explores and interacts with its
+        environment. Leveraged VLMs grounded with physical awareness to predict object affordances
+        and choose appropriate motion primitives for interaction. Tested in MuJoCo/Isaac Sim and in
+        real-world experiments with TidyBot.
+      </p>
+      <p>
+        Previously built a dexterous grasp evaluation pipeline using 3D Gaussian Splatting. Designed
+        a custom VQ-VAE architecture to compress 3DGS into latent codes and trained a multi-headed
+        evaluator predicting grasp success, collisions, and stability, achieving a 95.1% grasp
+        success rate in simulation and surpassing BPS/NeRF baselines.
       </p>
     </div>
 
-    <!-- 2. Columbia Speech Lab -->
-    <div class="exp-entry">
+    <div class="exp">
       <div class="exp-title">Columbia University — Speech Lab</div>
-      <div class="exp-role">NLP Researcher · May 2023 – Dec 2023 · Mentor: Prof. Julia Hirschberg</div>
+      <div class="exp-meta">NLP Researcher · May 2023 – Dec 2023 · Mentor: Prof. Julia Hirschberg</div>
       <p>
         Built an emotion-aware conversational AI system combining ASR, prosodic features, and LLM
-        reasoning to detect sudden emotion shifts from neutral or happy to sad or anger. Multimodal fusion of transcripts, 
-        audio embeddings, and dialogue context. Trained on 150+ IEMOCAP videos (~10GB), improving accuracy from ~40% to 78%.
+        reasoning to detect sudden emotion shifts from neutral or happy to sad or angry. Multimodal
+        fusion of transcripts, audio embeddings, and dialogue context. Trained on 150+ IEMOCAP videos
+        (~10 GB), improving accuracy from ~40% to 78%.
       </p>
     </div>
 
-    <!-- 3. Columbia Robot Learning -->
-    <div class="exp-entry">
+    <div class="exp">
       <div class="exp-title">Columbia University — Robot Learning</div>
-      <div class="exp-role">Independent Researcher · Nov 2022 – Aug 2023 · Mentor: Prof. Shuran Song</div>
+      <div class="exp-meta">Independent Researcher · Nov 2022 – Aug 2023 · Mentor: Prof. Shuran Song</div>
       <p>
-        Led a team of 4 researchers to build zero-shot learning framework that assesses step-by-step task execution 
-        for long-horizon tasks. Algorithm describes predicted step outcome with LLM, evaluates video data against language 
-        outcome description with VLM, and assesses incremental progress with custom scoring metric. Achieved ~95% accuracy
-        across diverse household and kitchen tasks. First-author publication at International Conference for Robotics and Computer Vision
-        (ICRCV) 2023.
+        Led a team of four researchers to build a zero-shot learning framework that assesses
+        step-by-step task execution for long-horizon tasks. The algorithm describes the predicted step
+        outcome with an LLM, evaluates video data against the language outcome description with a VLM,
+        and assesses incremental progress with a custom scoring metric. Achieved ~95% accuracy across
+        diverse household and kitchen tasks; first-author publication at ICRCV 2023.
       </p>
     </div>
 
-    <!-- 4. Forecasting -->
-    <div class="exp-entry">
-      <div class="exp-title">Columbia University — ML & Forecasting</div>
-      <div class="exp-role">Student Researcher · Oct 2023 – July 2024 · Mentor: Prof. Michelle Levine</div>
+    <div class="exp">
+      <div class="exp-title">Columbia University — ML &amp; Forecasting</div>
+      <div class="exp-meta">Student Researcher · Oct 2023 – July 2024 · Mentor: Prof. Michelle Levine</div>
       <p>
-        Built vector autoregression models to forecast EV adoption using policy incentives and 
+        Built vector autoregression models to forecast EV adoption using policy incentives and
         charging infrastructure data. Produced a first-author publication at ITISE 2024.
       </p>
     </div>
 
-    <!-- 5. CML -->
-    <div class="exp-entry">
+    <div class="exp">
       <div class="exp-title">Columbia University — Creative Machines Lab</div>
-      <div class="exp-role">Undergraduate Researcher · Sept 2022 – Dec 2022 · Mentor: Prof. Hod Lipson</div>
+      <div class="exp-meta">Undergraduate Researcher · Sept 2022 – Dec 2022 · Mentor: Prof. Hod Lipson</div>
       <p>
-        Designed a NeRF-inspired model that learns robot kinematics from single-view video by predicting 
-        occupancy from 3D coordinates and joint angles. Used PyBullet-derived camera intrinsics to 
-        reconstruct 3D geometry from 2D single-view data.
+        Designed a NeRF-inspired model that learns robot kinematics from single-view video by
+        predicting occupancy from 3D coordinates and joint angles. Used PyBullet-derived camera
+        intrinsics to reconstruct 3D geometry from 2D single-view data.
       </p>
     </div>
-  </div>
+  </section>
 
-
-  <!-- ================= PUBLICATIONS ================ -->
-  <div class="section">
-  <h2>Recent Publications</h2>
-
-  <!-- 1 -->
-  <div class="publication">
-    <img src="pub1.jpg">
-    <div class="pub-entry">
-      <div class="pub-title">Self Evaluation Using Zero-shot Learning</div>
-      <div class="pub-authors">Anuva Banwasi, Xinghua Sun, Rohith Ravindranath, March Vazquez</div>
-      <div>
-        <i>International Conference on Robotics and Computer Vision (ICRCV)</i>, Nanjing, 2023.  
-        doi: <a href="https://doi.org/10.1109/ICRCV59470.2023.10329149">10.1109/ICRCV59470.2023.10329149</a>
-      </div>
-      <div class="pub-links">
-        <a href="https://doi.org/10.1109/ICRCV59470.2023.10329149">[paper]</a>
-      </div>
-    </div>
-  </div>
-
-    <!-- 2 -->
-  <div class="publication">
-    <img src="pub4.jpg">
-    <div class="pub-entry">
-      <div class="pub-title">Hands Off, Splat On: Dexterous Grasp Evaluator with 3D Gaussian Encodings</div>
-      <div class="pub-authors">Anuva Banwasi, Yi Du, Ashwin Mahendran</div>
-      <div>In submission.</div>
-      <div class="pub-links">
-        <a href="https://github.com/Dude346/CS231A">[code]</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3 -->
-  <div class="publication">
-    <img src="pub2.jpg">
-    <div class="pub-entry">
-      <div class="pub-title">Promoting Electric Vehicle Growth through Infrastructure and Policy</div>
-      <div class="pub-authors">Anuva Banwasi, Adele M Sinai, Brennan Xavier McManus</div>
-      <div>
-        <i>International Conference on Time Series and Forecasting (ITISE)</i>, 2024.  
-        doi: <a href="https://doi.org/10.3390/engproc2024068060">10.3390/engproc2024068060</a>
-      </div>
-      <div class="pub-links">
-        <a href="https://doi.org/10.3390/engproc2024068060">[paper]</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4 -->
-  <div class="publication">
-    <img src="pub3.jpg">
-    <div class="pub-entry">
-      <div class="pub-title">A Comparative Analysis of Guardrail Frameworks for LLMs</div>
-      <div class="pub-authors">Anuva Banwasi, Samuel Friedman, Michael Khanzadeh</div>
-      <div>Under review at <i>ACL 2026</i>.</div>
-      <div class="pub-links">
-        <a href="https://github.com/llmguardrails/LLMGuardrailsPaper">[manuscript]</a>
-      </div>
-    </div>
-  </div>
+  <footer>
+    <span>© 2026 Anuva Banwasi</span>
+    <span>Stanford, CA</span>
+  </footer>
 
 </div>
 
+<script>
+  // highlight the nav link for whichever section is currently in view
+  (function () {
+    var links = {};
+    document.querySelectorAll('.sitenav-links a[href^="#"]').forEach(function (a) {
+      links[a.getAttribute('href').slice(1)] = a;
+    });
+    var sections = document.querySelectorAll('section[id]');
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    var visible = new Set();
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id);
+      });
+      var current = null;
+      sections.forEach(function (sec) { if (visible.has(sec.id) && !current) current = sec.id; });
+      Object.keys(links).forEach(function (id) {
+        links[id].classList.toggle('active', id === current);
+      });
+    }, { rootMargin: '-66px 0px -60% 0px' });
+
+    sections.forEach(function (sec) { observer.observe(sec); });
+  })();
+</script>
 </body>
 </html>

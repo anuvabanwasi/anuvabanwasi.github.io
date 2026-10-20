@@ -29,6 +29,8 @@
     --line:      #e3e6ea;
     --accent:    #1b4ca1;
     --accent-bg: #eaf0fb;
+    --spot:      #8a5300;
+    --spot-bg:   #fcf1dc;
     --radius:    10px;
   }
 
@@ -42,11 +44,14 @@
       --line:      #2a2f36;
       --accent:    #86b6ef;
       --accent-bg: #16233a;
+      --spot:      #f0b860;
+      --spot-bg:   #33270f;
     }
   }
   :root[data-theme="dark"] {
     --bg:#101215; --surface:#181b20; --text:#e9ecef; --text-soft:#b3b9c1;
     --text-mute:#858c95; --line:#2a2f36; --accent:#86b6ef; --accent-bg:#16233a;
+    --spot:#f0b860; --spot-bg:#33270f;
   }
 
   * { box-sizing: border-box; }
@@ -244,6 +249,7 @@
     margin-left: 8px;
     vertical-align: 1.5px;
   }
+  .badge-spot { background: var(--spot-bg); color: var(--spot); }
 
   .pub-links { display: flex; flex-wrap: wrap; gap: 7px; }
   .pub-links a {
@@ -397,7 +403,7 @@
         </div>
         <div class="pub-venue">
           <em>Conference on Robot Learning (CoRL)</em>, 2026 <span class="badge">CoRL 2026</span>
-          <span class="badge">IROS MoMA Workshop Spotlight</span>
+          <span class="badge badge-spot">IROS MoMA Workshop Spotlight</span>
         </div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2609.15976" target="_blank" rel="noopener">arXiv</a>
